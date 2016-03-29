@@ -10,7 +10,7 @@ scroll directive on vue
 ```
 
 ## plain sample 
-* [Many Hello Worlds](https://cdn.rawgit.com/wangpin34/vue-scroll/sample/index.html)
+* [Many Hello Worlds](http://cdn.rawgit.com/wangpin34/vue-scroll/master/sample/index.html)
 
 # LICENSE
 MIT
