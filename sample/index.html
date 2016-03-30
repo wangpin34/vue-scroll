@@ -5,27 +5,83 @@
 <meta content="yes" name="apple-mobile-web-app-capable">
 <meta content="yes" name="apple-touch-fullscreen">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-<title>v-scroll directive</title>
+<title>vue-scroll basic sample</title>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.min.js"></script>
 <script type="text/javascript" src="http://cdn.rawgit.com/wangpin34/vue-scroll/master/lib/vue-scroll.js"></script>
 <style>
-html,body,#app {
-	height : 100%;
+html {
+  font-size : 36px;
+  margin: 0;
+  padding: 0; 
+  height: 100%;
 }
 
-ol {
-	height: 100%;
-	overflow: auto;
+body {
+  margin: 0;
+  padding: 0;
+  height : 90%;
+}
+
+#app {
+  height: 80%;
+  width: 600px;
+  margin: 2rem auto;
+  background: rgb(239, 240, 244);
+}
+
+#app h5 {
+  text-align: left;
+  padding: 0 2%;
+  margin: 0;
+  height: 15%;
+  line-height: 2rem;
+  border-radius: 5px;
+}
+
+#app ol {
+  height: 80%;
+  list-style: none;
+  font-size: .5rem;
+  overflow: auto;
+  padding: 0 .3rem;
+  margin: 0;
+  border-radius: 5px;
+}
+
+#app ol li {
+  background: #fff;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 5%;
+  line-height: 1.5rem;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+#ob {
+  font-size: .5rem;
+  width: 200px;
+  position: fixed;
+  right: 15%;
+  top: 15%;
+  border: thin solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: .1rem .3rem;
 }
 
 </style>
 </head>
 <body>
 <div id="app">
+  <h5>Orders</h5>
  	<ol v-scroll="onScroll">
  		<li v-for="msg of msgs" track-by="$index" >{{msg}}</li>
- 	</ol>	
+ 	</ol>
+  <div id="ob">
+    <p>scrollTop:<span>{{position.scrollTop}}</span></p>
+  </div>	
 </div>
+
 </body>
 <script type="text/javascript">
 new Vue({
@@ -33,17 +89,18 @@ new Vue({
   data: function(){
   	var max = 50,
   		msgs = [],
-  		msg = 'Hello World';
-  	while( max-- > 0 ){
+  		msg = 'Order';
+  	while( max -- > 0 ){
   		msgs.push(msg);
   	}
   	return {
-  		msgs : msgs
+  		msgs : msgs,
+      position: {scrollTop: 0, scrollLeft: 0}
   	}
   },
   methods:{
-  	onScroll:function(e, data){
-  		console.log('scroll...' + JSON.stringify(data));
+  	onScroll:function(e, position){
+  		this.position = position;
   	}
   }
 })
