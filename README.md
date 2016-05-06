@@ -5,18 +5,21 @@ scroll directive for [vuejs](https://vuejs.org/)
 
 # Installation
 ## NPM(recommended)
-	```
-		npm install vue-scroll --save-dev
-	```
-	You need to load it manually.
-    ```
-    const Vue = require('vue')
-    const vScroll = require('vue-scroll')
-    Vue.use(vScroll)
-    ```
+```
+npm install vue-scroll --save-dev
+```
+    
+You need to load it manually.
+    
+```
+const Vue = require('vue')
+const vScroll = require('vue-scroll')
+Vue.use(vScroll)
+```
 ## Standlone
 
-	Simple download and include it in script tag. And it will be auto loaded into vue.
+Simple download and include it in script tag. And it will be auto loaded into vue.
+
    * [dev-version](http://cdn.rawgit.com/wangpin34/vue-scroll/master/lib/vue-scroll.js)
    * [product-version(compressed)](http://cdn.rawgit.com/wangpin34/vue-scroll/master/dist/vue-scroll.min.js)
 
@@ -29,9 +32,9 @@ new Vue({
   el: '#app',
   data: {},
   methods:{
-  	onScroll:function(e, position){
-  		this.position = position;
-  	}
+    onScroll:function(e, position){
+      this.position = position;
+    }
   }
 })
 ```
