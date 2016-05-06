@@ -1,6 +1,6 @@
 {
   "name": "vue-scroll",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "scroll directive for vuejs",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "wangpin:wangpin34/vue-scroll"
+    "url": "git@github.com:wangpin34/vue-scroll"
+  },
+  "bugs": {
+    "url": "https://github.com/wangpin34/vue-scroll/issues"
   },
   "keywords": [
     "scroll",
