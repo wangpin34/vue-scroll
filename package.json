@@ -1,0 +1,19 @@
+{
+  "name": "vue-scroll",
+  "version": "1.0.0",
+  "description": "scroll directive for vuejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wangpin:wangpin34/vue-scroll"
+  },
+  "keywords": [
+    "scroll",
+    "directive"
+  ],
+  "author": "wangpin",
+  "license": "MIT"
+}

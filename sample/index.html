@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 <title>vue-scroll basic sample</title>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.min.js"></script>
-<script type="text/javascript" src="http://cdn.rawgit.com/wangpin34/vue-scroll/master/lib/vue-scroll.js"></script>
+<!--<script type="text/javascript" src="http://cdn.rawgit.com/wangpin34/vue-scroll/master/lib/vue-scroll.js"></script>-->
+<script type="text/javascript" src="../dist/vue-scroll.min.js"></script>
 <style>
 html {
   font-size : 36px;
@@ -19,12 +20,12 @@ html {
 body {
   margin: 0;
   padding: 0;
-  height : 90%;
+  height : 100%;
 }
 
 #app {
   height: 80%;
-  width: 600px;
+  width: 400px;
   margin: 2rem auto;
   background: rgb(239, 240, 244);
 }
@@ -60,11 +61,11 @@ body {
 
 #ob {
   font-size: .5rem;
-  width: 200px;
+  width: 150px;
   position: fixed;
-  right: 15%;
-  top: 15%;
-  border: thin solid rgba(0, 0, 0, 0.2);
+  right: 50%;
+  left: 50%;
+  top: 2rem;
   border-radius: 5px;
   padding: .1rem .3rem;
 }
@@ -75,7 +76,7 @@ body {
 <div id="app">
   <h5>Orders</h5>
  	<ol v-scroll="onScroll">
- 		<li v-for="msg of msgs" track-by="$index" >{{msg}}</li>
+ 		<li v-for="msg of msgs" track-by="$index" >{{msg}} - {{$index}}</li>
  	</ol>
   <div id="ob">
     <p>scrollTop:<span>{{position.scrollTop}}</span></p>
