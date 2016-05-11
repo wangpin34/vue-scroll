@@ -6,7 +6,7 @@ scroll directive for [vuejs](https://vuejs.org/)
 # Installation
 ## NPM(recommended)
 ```
-npm install vue-scroll --save-dev
+npm install vue-scroll --save
 ```
     
 You need to load it manually.
