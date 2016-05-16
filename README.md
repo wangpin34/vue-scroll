@@ -6,7 +6,7 @@ scroll directive for [vuejs](https://vuejs.org/)
 # Installation
 ## NPM(recommended)
 ```
-npm install vue-scroll --save-dev
+npm install vue-scroll --save
 ```
     
 You need to load it manually.
@@ -54,7 +54,7 @@ In html:
 
 
 # Plain sample 
-* [Hello World](http://cdn.rawgit.com/wangpin34/vue-scroll/master/sample/index.html)
+* [Hello World](https://rawgit.com/wangpin34/vue-scroll/master/sample/index.html)
 
 # LICENSE
 MIT
