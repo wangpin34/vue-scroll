@@ -20,8 +20,8 @@ Vue.use(vScroll)
 
 Simple download and include it in script tag. And it will be auto loaded into vue.
 
-   * [dev-version](http://cdn.rawgit.com/wangpin34/vue-scroll/master/lib/vue-scroll.browser.js)
-   * [product-version(compressed)](http://cdn.rawgit.com/wangpin34/vue-scroll/master/dist/vue-scroll.min.js)
+   * [dev-version](https://rawgit.com/wangpin34/vue-scroll/master/lib/vue-scroll.browser.js)
+   * [product-version(compressed)](https://rawgit.com/wangpin34/vue-scroll/master/dist/vue-scroll.min.js)
 
 # Usage
 It's very simple, just declar in html tags and provide a defined callback - the scroll function below.
