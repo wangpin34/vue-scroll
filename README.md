@@ -1,5 +1,5 @@
 # vue-scroll
-scroll directive for [vuejs](https://vuejs.org/)
+scroll directive for [vuejs 2.0](https://vuejs.org/v2/guide/)
 
 [![NPM](https://nodei.co/npm/vue-scroll.png?stars&downloads)](https://nodei.co/npm/vue-scroll/)
 
@@ -8,18 +8,12 @@ scroll directive for [vuejs](https://vuejs.org/)
 ```
 npm install vue-scroll --save
 ```
-    
-And it is necessary to import it explicitly
-    
-```
-require('vue-scroll')
-```
 ### Standlone
 
 Simple download and include it in script tag. 
 
-   * [dev-version](http://rawgit.com/wangpin34/vue-scroll/master/lib/vue-scroll.browser.js)
-   * [product-version(compressed)](http://rawgit.com/wangpin34/vue-scroll/master/dist/vue-scroll.min.js)
+   * [dev-version](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/lib/vue-scroll.js)
+   * [product-version(compressed)](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/dist/vue-scroll.min.js)
 
 ## Usage
 It's very simple, just declar in html tags and provide a defined callback - the scroll function below.
@@ -53,8 +47,8 @@ In html:
 
 ## Samples
 
-* Sample - commonjs [Introduction](http://rawgit.com/wangpin34/vue-scroll/master/samples/commonjs/README.md)
-* [Sample - standlone](http://rawgit.com/wangpin34/vue-scroll/master/samples/standlone/README.md)
+* Sample - commonjs [Introduction](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/commonjs)
+* [Sample - standlone](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/standlone) *** [Try in now](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/samples/standlone/index.html)
 
 
 ## LICENSE
