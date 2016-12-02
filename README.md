@@ -51,9 +51,10 @@ In html:
 
 
 
-## Example
+## Samples
 
-* [Hello World](http://rawgit.com/wangpin34/vue-scroll/master/sample/index.html)
+* Sample - commonjs [Introduction](http://rawgit.com/wangpin34/vue-scroll/master/samples/commonjs/README.md)
+* [Sample - standlone](http://rawgit.com/wangpin34/vue-scroll/master/samples/standlone/README.md)
 
 
 ## LICENSE

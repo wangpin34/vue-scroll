@@ -1,7 +1,7 @@
 var Vue = require('vue');
-var vueScroll = require('../index.js')
+var vueScroll = require('../../index.js')
 
-Vue.use(vueScroll) // You don't need to use vue-scroll explicitly cause it's already done in vue-scroll 
+Vue.use(vueScroll) 
 
 new Vue({
   el: '#app',

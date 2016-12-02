@@ -73,7 +73,7 @@ body {
 <div id="app">
   <h5>Orders</h5>
  	<ol v-scroll="onScroll">
- 		<li v-for="msg of msgs" track-by="$index" >{{msg}} - {{$index}}</li>
+ 		<li v-for="(msg, index) of msgs">{{msg}} - {{index}}</li>
  	</ol>
   <div id="ob">
     <p>scrollTop:<span>{{position.scrollTop}}</span></p>

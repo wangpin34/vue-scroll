@@ -1,11 +1,11 @@
 {
   "name": "vue-scroll",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "scroll directive for vuejs",
   "main": "index.js",
   "scripts": {
-    "test": "",
-    "dist": "gulp compress"
+    "dist": "gulp compress",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -15,13 +15,15 @@
     "url": "https://github.com/wangpin34/vue-scroll/issues"
   },
   "keywords": [
-    "scroll",
-    "directive"
+    "vue",
+    "vuejs",
+    "directive",
+    "scroll"
   ],
   "author": "wangpin",
   "license": "MIT",
   "dependencies": {
-    "vue": "^1.0.24"
+    "vue": "^2.1.4"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -29,5 +31,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "pump": "^1.0.1"
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common"
   }
 }

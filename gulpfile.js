@@ -5,7 +5,7 @@ var pump = require('pump');
  
 gulp.task('compress', function (cb) {
     pump([
-            gulp.src('lib/vue-scroll.browser.js'),
+            gulp.src('lib/vue-scroll.js'),
             uglify(),
             rename(function (path) {
                 path.basename = "vue-scroll.min";
