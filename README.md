@@ -1,6 +1,8 @@
 # vue-scroll
 scroll directive for [vuejs 2.0](https://vuejs.org/v2/guide/)
 
+For vue 1.x, please use vue-scroll@1.0.4 or higher version. Currently its code is in master branch.
+
 [![NPM](https://nodei.co/npm/vue-scroll.png?stars&downloads)](https://nodei.co/npm/vue-scroll/)
 
 ## Installation
@@ -10,7 +12,7 @@ npm install vue-scroll --save
 ```
 ### Standlone
 
-Simple download and include it in script tag. 
+Simple download and include it in script tag.
 
    * [dev-version](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/lib/vue-scroll.js)
    * [product-version(compressed)](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/dist/vue-scroll.min.js)
@@ -32,7 +34,7 @@ new Vue({
 ```
 
 The function onScroll has two arguments, e is the scroll event object, position is an object which has two properties about the postion of scroll bar:
-* scrollTop type:number 
+* scrollTop type:number
 * scrollLeft type:number
 
 In html:
