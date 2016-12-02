@@ -31,3 +31,12 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+# Samples
+samples
+
+# Bundle files
+dist
+
+# Bundle scripts
+gulpfile.js
