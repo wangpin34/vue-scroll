@@ -1,1 +1,1 @@
-module.exports = require('./lib/vue-scroll')
+module.exports = require('./lib/vue-scroll');
