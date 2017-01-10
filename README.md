@@ -12,10 +12,7 @@ npm install vue-scroll --save
 ```
 ### Standlone
 
-Simple download and include it in script tag.
-
-   * [dev-version](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/lib/vue-scroll.js)
-   * [product-version(compressed)](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/dist/vue-scroll.min.js)
+Simple download from [releases](https://github.com/wangpin34/vue-scroll/releases) and include it in script tag.
 
 ## Usage
 It's very simple, just declar in html tags and provide a defined callback - the scroll function below.
