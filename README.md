@@ -1,7 +1,7 @@
 # vue-scroll
 scroll directive for [vuejs 2.0](https://vuejs.org/v2/guide/)
 
-For vue 1.x, please use vue-scroll@1.0.4 or higher version. Currently its code is in master branch.
+For vue 1.x, please use vue-scroll@1.0.4. Currently its code is in master branch.
 
 [![NPM](https://nodei.co/npm/vue-scroll.png?stars&downloads)](https://nodei.co/npm/vue-scroll/)
 
