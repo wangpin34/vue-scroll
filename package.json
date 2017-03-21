@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dist": "gulp compress",
+    "prepublish": "npm run dist",
     "test": ""
   },
   "repository": {
