@@ -44,12 +44,10 @@ The function onScroll has two arguments, e is the scroll event object, position 
 
 In html:
 ```
-<body v-scroll="onScroll">
+<div v-scroll="onScroll">
 ...
-</body>
-
+</div>
 ```
-
 
 
 ## Samples
