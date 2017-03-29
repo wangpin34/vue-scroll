@@ -55,6 +55,7 @@ In html:
 * Sample - commonjs [Introduction](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/commonjs)
 * [Sample - standlone](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/standlone) *** [Try in now](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/samples/standlone/index.html)
 
+* [Component Demo](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/vue-cli-webpack)
 
 ## LICENSE
 MIT
