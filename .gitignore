@@ -34,3 +34,5 @@ node_modules
 
 # Bundle files
 samples/bundle.js
+
+dist
