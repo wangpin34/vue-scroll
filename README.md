@@ -18,7 +18,7 @@ For vue 1.x, please use vue-scroll@1.0.4. Currently its code is in master branch
 ```
 npm install vue-scroll --save
 ```
-### Standlone
+### Standalone
 
 Simple download from [releases](https://github.com/wangpin34/vue-scroll/releases) and include it in script tag.
 
@@ -53,7 +53,7 @@ In html:
 ## Samples
 
 * Sample - commonjs [Introduction](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/commonjs)
-* [Sample - standlone](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/standlone) *** [Try in now](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/samples/standlone/index.html)
+* [Sample - standlone](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/standlone) *** [Try it now](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/samples/standlone/index.html)
 
 * [Component Demo](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/vue-cli-webpack)
 
