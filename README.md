@@ -23,7 +23,24 @@ npm install vue-scroll --save
 Simple download from [releases](https://github.com/wangpin34/vue-scroll/releases) and include it in script tag.
 
 ## Usage
-It's very simple, just declar in html tags and provide a defined callback - the scroll function below.
+### Import
+If you have an installed vue-scroll at your node_modules, you can import it like following(ES2015).
+
+```javascript
+import vuescroll from 'vue-scroll'
+
+Vue.use(vuescroll)
+```
+
+### Make it work
+It's very simple, just declar in html tags(Just like other standard vue directives) and provide a defined callback - the scroll function below.
+
+In html:
+```
+<div v-scroll="onScroll">
+...
+</div>
+```
 
 In javasript:
 ```javascript
@@ -41,13 +58,6 @@ new Vue({
 The function onScroll has two arguments, e is the scroll event object, position is an object which has two properties about the postion of scroll bar:
 * scrollTop type:number
 * scrollLeft type:number
-
-In html:
-```
-<div v-scroll="onScroll">
-...
-</div>
-```
 
 
 ## Samples
