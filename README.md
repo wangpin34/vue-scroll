@@ -18,12 +18,29 @@ For vue 1.x, please use vue-scroll@1.0.4. Currently its code is in master branch
 ```
 npm install vue-scroll --save
 ```
-### Standlone
+### Standalone
 
 Simple download from [releases](https://github.com/wangpin34/vue-scroll/releases) and include it in script tag.
 
 ## Usage
-It's very simple, just declar in html tags and provide a defined callback - the scroll function below.
+### Import
+If you have an installed vue-scroll at your node_modules, you can import it like following(ES2015).
+
+```javascript
+import vuescroll from 'vue-scroll'
+
+Vue.use(vuescroll)
+```
+
+### Make it work
+It's very simple, just declar in html tags(Just like other standard vue directives) and provide a defined callback - the scroll function below.
+
+In html:
+```
+<div v-scroll="onScroll">
+...
+</div>
+```
 
 In javasript:
 ```javascript
@@ -42,18 +59,11 @@ The function onScroll has two arguments, e is the scroll event object, position 
 * scrollTop type:number
 * scrollLeft type:number
 
-In html:
-```
-<div v-scroll="onScroll">
-...
-</div>
-```
-
 
 ## Samples
 
 * Sample - commonjs [Introduction](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/commonjs)
-* [Sample - standlone](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/standlone) *** [Try in now](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/samples/standlone/index.html)
+* [Sample - standlone](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/standlone) *** [Try it now](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/samples/standlone/index.html)
 
 * [Component Demo](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/vue-cli-webpack)
 
