@@ -19,53 +19,63 @@ For vue 1.x, please use vue-scroll@1.0.4. Currently its code is in master branch
 npm install vue-scroll --save
 ```
 ### Standalone
+**Standalone bundle is not support on latest v2.1.0 currently**
 
 Simple download from [releases](https://github.com/wangpin34/vue-scroll/releases) and include it in script tag.
 
-## Usage
-### Import
-If you have an installed vue-scroll at your node_modules, you can import it like following(ES2015).
+## Get started
 
 ```javascript
+import Vue from 'vue'
 import vuescroll from 'vue-scroll'
 
 Vue.use(vuescroll)
 ```
 
-### Make it work
-It's very simple, just declar in html tags(Just like other standard vue directives) and provide a defined callback - the scroll function below.
+Directive v-scroll then can be used in any of your Component.
 
-In html:
-```
-<div v-scroll="onScroll">
+```App.vue
+<template>
+  <ul v-scroll="onScroll">
+    <li></li>
+  </ul>
+</template>
 ...
-</div>
 ```
 
-In javasript:
+Method onScroll receives two arguments once scroll event is fired,
+
+* e - event
+* position - Object contains scrolling data
+  - scrollTop Number
+  - scrollLeft Number
+
+## Advanced
+throttle and debounce are supported since v2.1.0, you can enable it as global configurations like:
+
 ```javascript
-new Vue({
-  el: '#app',
-  data: {},
-  methods:{
-    onScroll:function(e, position){
-      this.position = position;
-    }
-  }
-})
+Vue.use(vuescroll, {throttle: 600})
+//Or
+Vue.use(vuescroll, {debounce: 600})
 ```
 
-The function onScroll has two arguments, e is the scroll event object, position is an object which has two properties about the postion of scroll bar:
-* scrollTop type:number
-* scrollLeft type:number
+Override global configurations like
+
+```html
+<ul v-scroll:throttle="{fn: onScroll, throttle: 500 }">
+```
+```html
+<ul v-scroll:debounce="{fn: onScroll, debounce: 500 }">
+```
 
 
-## Samples
+## Demo
+* [Component Demo](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/vue-cli-webpack)
 
+Below two demos are uncommonly used and outdated. 
 * Sample - commonjs [Introduction](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/commonjs)
 * [Sample - standlone](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/standlone) *** [Try it now](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/samples/standlone/index.html)
 
-* [Component Demo](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/vue-cli-webpack)
 
 ## LICENSE
 MIT
