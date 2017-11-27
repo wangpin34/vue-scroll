@@ -5,7 +5,8 @@ import vuescroll from 'vue-scroll'
 import App from './App'
 import router from './router'
 
-Vue.use(vuescroll)
+//Vue.use(vuescroll, {throttle: 600})
+Vue.use(vuescroll, {debounce: 600})
 
 /* eslint-disable no-new */
 new Vue({

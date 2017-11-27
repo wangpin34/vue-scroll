@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
+    <router-link to="/about">about</router-link>
     <h5>Orders</h5>
-    <ol v-scroll="onScroll">
+    <ol v-scroll:throttle="{fn: onScroll, throttle: 500 }">
       <li v-for="(msg, index) of msgs">{{msg}} - {{index}}</li>
     </ol>
     <div id="ob">scrollTop:{{position.scrollTop}}</div>
@@ -33,13 +34,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-body {
-  font-size : 36px;
-  margin: 0;
-  padding: 0;
-  height : 100%;
-}
 
 .hello {
   width: 500px;

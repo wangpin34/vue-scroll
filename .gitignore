@@ -36,3 +36,5 @@ node_modules
 samples/bundle.js
 
 dist
+
+**/package.json.lock
