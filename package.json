@@ -1,9 +1,10 @@
 {
   "name": "vue-scroll",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "scroll directive for vuejs 2.0",
   "main": "index.js",
   "scripts": {
+    "clean": "gulp clean",
     "dist": "gulp compress",
     "prepublish": "npm run dist",
     "test": ""
@@ -24,6 +25,7 @@
   "author": "wangpin",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.4",
     "vue": "^2.1.4"
   },
   "devDependencies": {
