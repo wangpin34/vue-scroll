@@ -1,6 +1,6 @@
 {
   "name": "vue-scroll",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "scroll directive for vuejs 2.0",
   "main": "index.js",
   "scripts": {
