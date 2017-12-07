@@ -37,6 +37,7 @@ samples
 
 # Bundle files
 dist
+src
 
 # Bundle scripts
 gulpfile.js
