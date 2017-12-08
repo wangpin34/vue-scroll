@@ -1,6 +1,6 @@
 {
   "name": "vue-scroll",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "scroll directive for vuejs 2.0",
   "main": "dist/vue-scroll.common.js",
   "module": "dist/vue-scroll.esm.js",
@@ -43,5 +43,8 @@
   },
   "browser": {
     "vue": "vue/dist/vue-scroll.min.js"
-  }
+  },
+  "files": [
+    "dist/**"
+  ]
 }
