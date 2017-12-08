@@ -1,6 +1,5 @@
-const _ = require('lodash')
-const Vue = require('vue')
-const dom = require('./domEvent')
+import _ from 'lodash'
+import dom from './domEvent'
 
 const vuescroll = new Object;
 
@@ -74,5 +73,5 @@ vuescroll.install = function (Vue, options) {
 
 }
 
-module.exports = module.exports = vuescroll;
+export default vuescroll;
 

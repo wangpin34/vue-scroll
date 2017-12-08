@@ -2,12 +2,12 @@
   "name": "vue-scroll",
   "version": "2.1.4",
   "description": "scroll directive for vuejs 2.0",
-  "main": "index.js",
+  "main": "dist/vue-scroll.common.js",
+  "module": "dist/vue-scroll.esm.js",
+  "unpkg": "dist/vue-scroll.js",
   "scripts": {
-    "clean": "gulp clean",
-    "dist": "gulp compress",
-    "build": "gulp build",
-    "test": ""
+    "dev:dist": "rollup -wm -c build/rollup.dev.config.js",
+    "build": "node build/build.js"
   },
   "repository": {
     "type": "git",
@@ -25,16 +25,21 @@
   "author": "wangpin",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.4"
+  },
+  "peerDependencies": {
     "vue": "^2.1.4"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-cli": "^1.2.2",
-    "gulp-delete-file": "^1.0.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-strip-debug": "^1.1.0",
-    "gulp-uglify": "^2.0.0"
+    "rollup": "^0.52.1",
+    "rollup-plugin-buble": "^0.18.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-flow-no-whitespace": "^1.0.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-strip": "^1.1.1",
+    "uglify-js": "^3.2.1",
+    "zlib": "^1.0.5"
   },
   "browser": {
     "vue": "vue/dist/vue.common"

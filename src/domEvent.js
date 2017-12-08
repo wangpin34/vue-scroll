@@ -1,6 +1,6 @@
-const _ = require('lodash');
+import _ from 'lodash'
 
-module.exports = (function () {
+export default (function () {
   const elements = [];
   const listeners = new Map();
 
