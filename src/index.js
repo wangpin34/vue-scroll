@@ -1,4 +1,5 @@
-import _ from 'lodash'
+import _isObject from 'lodash/isObject'
+import _isFunction from 'lodash/isFunction'
 import dom from './domEvent'
 
 const vuescroll = new Object;
@@ -13,7 +14,7 @@ vuescroll.install = function (Vue, options) {
 
   function bindValue (el, value, arg) {
     let fn, opt = Object.assign({}, options);
-    if (_.isObject(value) || _.isFunction(value)) {
+    if (_isObject(value) || _isFunction(value)) {
       fn = value;
 
       if (VALID_ARGS.indexOf(arg) > -1) {
@@ -30,7 +31,7 @@ vuescroll.install = function (Vue, options) {
       } catch(err) {
         console.warn('Unexpected error happened when binding listener');
       }
-      
+
     } else {
       console.warn('Unexpected scroll properties');
     }
@@ -38,7 +39,7 @@ vuescroll.install = function (Vue, options) {
 
   function unbindValue (el, value, arg) {
     let fn;
-    if (_.isObject(value) || _.isFunction(value)) {
+    if (_isObject(value) || _isFunction(value)) {
       fn = value;
       if (VALID_ARGS.indexOf(arg) > -1)  {
         fn = value.fn;
@@ -74,4 +75,3 @@ vuescroll.install = function (Vue, options) {
 }
 
 export default vuescroll;
-

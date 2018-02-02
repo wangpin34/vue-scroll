@@ -1,4 +1,10 @@
-import _ from 'lodash'
+import _isObject from 'lodash/isObject'
+import _isInteger from 'lodash/isInteger'
+import _isFunction from 'lodash/isFunction'
+import _isFinite from 'lodash/isFinite'
+import _debounce from 'lodash/debounce'
+import _throttle from 'lodash/throttle'
+
 
 export default (function () {
   const elements = [];
@@ -12,7 +18,7 @@ export default (function () {
       let data;
       let target = e.target || e.srcElement;
       e = e || window.e;
-      
+
       if (e.type === SCROLL) {
         if (target === document) {
           data = { scrollTop: document.body.scrollTop, scrollLeft: document.body.scrollLeft }
@@ -26,18 +32,18 @@ export default (function () {
       })
     }
 
-    if (_.isObject(opt)) {
-      if (_.isInteger(opt.throttle) &&  _.isFinite(opt.throttle) && opt.throttle > -1) {
+    if (_isObject(opt)) {
+      if (_isInteger(opt.throttle) && _isFinite(opt.throttle) && opt.throttle > -1) {
         console.log('Set throttle as ' + opt.throttle);
-        fn = _.throttle(fn, opt.throttle);
+        fn = _throttle(fn, opt.throttle);
       }
 
-      if (_.isInteger(opt.debounce) && _.isFinite(opt.debounce) && opt.debounce > -1) {
+      if (_isInteger(opt.debounce) && _isFinite(opt.debounce) && opt.debounce > -1) {
         console.log('Set debounce as ' + opt.debounce);
-        fn = _.debounce(fn, opt.debounce);
+        fn = _debounce(fn, opt.debounce);
       }
     }
-    
+
     // https://github.com/wangpin34/vue-scroll/issues/1
     if (event === SCROLL) {
       if(element === document.body || element === document || element === window) {
@@ -52,22 +58,22 @@ export default (function () {
     }
 
   }
-  
+
 
   function bind (element, event, fn, opt) {
-    
+
     let funcs, eventFuncs;
 
-    if (!_.isFunction(fn)) {
+    if (!_isFunction(fn)) {
       throw new Error('Scroll handler is not a function');
     }
 
     if (!listeners.has(element)) {
       listeners.set(element, new Map());
     }
-       
+
     funcs = listeners.get(element);
-     
+
     if (!funcs.has(event)) {
       funcs.set(event, []);
     }
@@ -77,7 +83,7 @@ export default (function () {
     if (!eventFuncs.length) {
       addEventListener(element, event, eventFuncs, opt);
     }
-    
+
     eventFuncs.push(fn);
 
   }
@@ -86,7 +92,7 @@ export default (function () {
 
     let funcs, eventFuncs;
 
-    if (!_.isFunction(fn)) {
+    if (!_isFunction(fn)) {
       return;
     }
 
@@ -95,7 +101,7 @@ export default (function () {
     }
 
     funcs = listeners.get(element);
-     
+
     if (!funcs.has(event)) {
       funcs.set(event, []);
     }

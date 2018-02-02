@@ -53,10 +53,10 @@ function genConfig (opts) {
           // set this to `false` if you don't want to
           // remove debugger statements
           debugger: true,
-    
+
           // defaults to `[ 'console.*', 'assert.*' ]`
           functions: [ 'console.log', 'assert.*', 'debug', 'alert' ],
-    
+
           // set this to `false` if you're not using sourcemaps –
           // defaults to `true`
           sourceMap: true
@@ -76,7 +76,14 @@ function genConfig (opts) {
       'process.env.NODE_ENV': JSON.stringify(opts.env)
     }))
   } else {
-    config.input.external = [ 'lodash' ]
+    config.input.external = [
+      'lodash/isObject',
+      'lodash/isFunction',
+      'lodash/isInteger',
+      'lodash/isFinite',
+      'lodash/debounce',
+      'lodash/throttle',
+    ]
   }
 
   return config

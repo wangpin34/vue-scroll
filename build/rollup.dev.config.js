@@ -8,6 +8,11 @@ export default {
     format: 'cjs'
   },
   external: [
-    'lodash'
+    'lodash/isObject',
+    'lodash/isFunction',
+    'lodash/isInteger',
+    'lodash/isFinite',
+    'lodash/debounce',
+    'lodash/throttle',
   ]
 }
