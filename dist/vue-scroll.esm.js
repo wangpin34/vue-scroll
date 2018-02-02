@@ -1,9 +1,14 @@
 /**
   * vue-scroll v2.1.6
-  * (c) 2017 Wang Pin
+  * (c) 2018 Wang Pin
   * @license MIT
   */
-import _ from 'lodash';
+import _isObject from 'lodash/isObject';
+import _isFunction from 'lodash/isFunction';
+import _isInteger from 'lodash/isInteger';
+import _isFinite from 'lodash/isFinite';
+import _debounce from 'lodash/debounce';
+import _throttle from 'lodash/throttle';
 
 var dom = (function () {
   var listeners = new Map();
@@ -16,7 +21,7 @@ var dom = (function () {
       var data;
       var target = e.target || e.srcElement;
       e = e || window.e;
-      
+
       if (e.type === SCROLL) {
         if (target === document) {
           data = { scrollTop: document.body.scrollTop, scrollLeft: document.body.scrollLeft };
@@ -30,16 +35,16 @@ var dom = (function () {
       });
     }
 
-    if (_.isObject(opt)) {
-      if (_.isInteger(opt.throttle) &&  _.isFinite(opt.throttle) && opt.throttle > -1) {
-        fn = _.throttle(fn, opt.throttle);
+    if (_isObject(opt)) {
+      if (_isInteger(opt.throttle) && _isFinite(opt.throttle) && opt.throttle > -1) {
+        fn = _throttle(fn, opt.throttle);
       }
 
-      if (_.isInteger(opt.debounce) && _.isFinite(opt.debounce) && opt.debounce > -1) {
-        fn = _.debounce(fn, opt.debounce);
+      if (_isInteger(opt.debounce) && _isFinite(opt.debounce) && opt.debounce > -1) {
+        fn = _debounce(fn, opt.debounce);
       }
     }
-    
+
     // https://github.com/wangpin34/vue-scroll/issues/1
     if (event === SCROLL) {
       if(element === document.body || element === document || element === window) {
@@ -54,22 +59,22 @@ var dom = (function () {
     }
 
   }
-  
+
 
   function bind (element, event, fn, opt) {
-    
+
     var funcs, eventFuncs;
 
-    if (!_.isFunction(fn)) {
+    if (!_isFunction(fn)) {
       throw new Error('Scroll handler is not a function');
     }
 
     if (!listeners.has(element)) {
       listeners.set(element, new Map());
     }
-       
+
     funcs = listeners.get(element);
-     
+
     if (!funcs.has(event)) {
       funcs.set(event, []);
     }
@@ -79,7 +84,7 @@ var dom = (function () {
     if (!eventFuncs.length) {
       addEventListener(element, event, eventFuncs, opt);
     }
-    
+
     eventFuncs.push(fn);
 
   }
@@ -88,7 +93,7 @@ var dom = (function () {
 
     var funcs, eventFuncs;
 
-    if (!_.isFunction(fn)) {
+    if (!_isFunction(fn)) {
       return;
     }
 
@@ -97,7 +102,7 @@ var dom = (function () {
     }
 
     funcs = listeners.get(element);
-     
+
     if (!funcs.has(event)) {
       funcs.set(event, []);
     }
@@ -132,7 +137,7 @@ vuescroll.install = function (Vue, options) {
 
   function bindValue (el, value, arg) {
     var fn, opt = Object.assign({}, options);
-    if (_.isObject(value) || _.isFunction(value)) {
+    if (_isObject(value) || _isFunction(value)) {
       fn = value;
 
       if (VALID_ARGS.indexOf(arg) > -1) {
@@ -149,7 +154,7 @@ vuescroll.install = function (Vue, options) {
       } catch(err) {
         console.warn('Unexpected error happened when binding listener');
       }
-      
+
     } else {
       console.warn('Unexpected scroll properties');
     }
@@ -157,7 +162,7 @@ vuescroll.install = function (Vue, options) {
 
   function unbindValue (el, value, arg) {
     var fn;
-    if (_.isObject(value) || _.isFunction(value)) {
+    if (_isObject(value) || _isFunction(value)) {
       fn = value;
       if (VALID_ARGS.indexOf(arg) > -1)  {
         fn = value.fn;
