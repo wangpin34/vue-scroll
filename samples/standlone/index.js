@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    Vue.use(vScroll) 
+    Vue.use(VueScroll) 
 
 		new Vue({
 			el: '#app',

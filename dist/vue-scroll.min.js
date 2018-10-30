@@ -1,5 +1,5 @@
 /**
-  * vue-scroll v2.1.7
+  * vue-scroll v2.1.8
   * (c) 2018 Wang Pin
   * @license MIT
   */
