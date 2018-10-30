@@ -9,6 +9,7 @@ import _isInteger from 'lodash/isInteger';
 import _isFinite from 'lodash/isFinite';
 import _debounce from 'lodash/debounce';
 import _throttle from 'lodash/throttle';
+import 'es6-map/implement';
 
 var dom = (function () {
   var listeners = new Map();

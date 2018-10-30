@@ -14,5 +14,6 @@ export default {
     'lodash/isFinite',
     'lodash/debounce',
     'lodash/throttle',
+    'es6-map/implement'
   ]
 }

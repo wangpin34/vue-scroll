@@ -83,6 +83,7 @@ function genConfig (opts) {
       'lodash/isFinite',
       'lodash/debounce',
       'lodash/throttle',
+      'es6-map/implement'
     ]
   }
 

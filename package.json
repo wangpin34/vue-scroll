@@ -25,7 +25,8 @@
   "author": "wangpin",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "es6-map": "^0.1.5",
+    "lodash": "^4.17.11"
   },
   "peerDependencies": {
     "vue": "^2.1.4"

@@ -1,6 +1,8 @@
 import _isObject from 'lodash/isObject'
 import _isFunction from 'lodash/isFunction'
 import dom from './domEvent'
+import * as _ from 'es6-map/implement'
+
 
 const vuescroll = new Object;
 

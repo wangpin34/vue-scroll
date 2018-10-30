@@ -13,6 +13,7 @@ var _isInteger = _interopDefault(require('lodash/isInteger'));
 var _isFinite = _interopDefault(require('lodash/isFinite'));
 var _debounce = _interopDefault(require('lodash/debounce'));
 var _throttle = _interopDefault(require('lodash/throttle'));
+require('es6-map/implement');
 
 var dom = (function () {
   var listeners = new Map();
