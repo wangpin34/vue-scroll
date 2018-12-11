@@ -7,99 +7,110 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 <title>vue-scroll basic sample</title>
 <style>
-body {
-  font-size : 36px;
-  margin: 0;
-  padding: 0;
-  height : 100%;
+html {
+  font-size: 62.5%;
 }
 
-.hello {
-  width: 500px;
-  height: 700px;
-  margin: 2rem auto;
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+ol,ul,li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#app {
+  height: 100%;
   position: relative;
-
-  background-color: #009688;
-  color: #E0F2F1;
-
-  border-radius: 2px;
-
-  text-align: left;
+  line-height: 1.5;
 }
 
-.hello h5 {
+header {
   width: 100%;
-  height: 100px;
-  padding: 0 2%;
-  margin: 0;
-  line-height: 100px;
-
-  font-size: 3rem;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  background-color: hsla(174, 100%, 29%, 1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hello ol {
-  width: 100%;
-  height: 600px;
-  padding: 0;
+main {
+  height: 85vh;
+  margin: 10vh 0 5vh 0;
+}
+
+header h5 {
+  font-size: 2.2rem;
   margin: 0;
+  padding: 0.5em 1em;
+  line-height: 2;
+  padding: 0 5%;
+}
 
-  overflow: auto;
-
-  list-style: none;
-  border-radius: 5px;
-
-  background-color: #E0F2F1;
-  color: #009688;
-
+main ol {
+  height: 100%;
   font-size: 1.5rem;
+  overflow-y: auto;
+  border-radius: 2px;
+  padding: 2% 5%;
 }
 
-.hello ol li {
+main ol li {
   background: #fff;
   width: 90%;
   height: 5rem;
-  margin: 0 auto;
-  padding: 0 5%;
   line-height: 5rem;
-  border-bottom: 1px dotted #009688;
+  border-bottom: 1px dashed hsla(174, 100%, 29%, 1);
   border-radius: 2px;
 }
 
-#ob {
-  width: 200px;
-  height: 100px;
-  line-height: 100px;
-  vertical-align: middle;
-  text-align: left;
-
-  position: absolute;
+footer {
+  height: 5vh;
+  font-size: 1.6rem;
+  position: fixed;
+  top: 50%;
   right: 0;
-  top: 0;
+}
 
-  padding: .1rem .3rem;
-
-  font-size: 1.5rem;
+footer p {
+  display: inline-block;
+  padding: 0.5em;
+  background-color: #fff;
+  border: 1px dashed hsla(174, 100%, 29%, 1);
+  outline: 1em solid hsla(174, 100%, 29%, 0.2);
 }
 
 </style>
 </head>
 <body>
 <div id="app">
-  <div class="hello">
+  <header>
     <h5>Orders</h5>
+  </header>
+  <main>
     <ol v-scroll="onScroll">
       <li v-for="(msg, index) of msgs">{{msg}} - {{index}}</li>
     </ol>
-    <div id="ob">
-      <p>scrollTop:<span>{{position.scrollTop}}</span></p>
-    </div>
-  </div>	
+  </main>
+  <footer>
+    <p>scrollTop:<span>{{position.scrollTop}}</span></p>
+  </footer>
 </div>
 
 </body>
-<script type="text/javascript" src="https://unpkg.com/vue@2.1.4/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js" defer></script>
 <script type="text/javascript" src="../../dist/vue-scroll.min.js" defer></script>
-<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript" src="./index.js" defer></script>
 </html>
