@@ -1,4 +1,15 @@
 # vue-scroll
+
+***Recommend to use the scroll implemenation of vuejs event handler***
+```
+<!-- the scroll event's default behavior (scrolling) will happen -->
+<!-- immediately, instead of waiting for `onScroll` to complete  -->
+<!-- in case it contains `event.preventDefault()`                -->
+<div v-on:scroll.passive="onScroll">...</div>
+```
+
+<hr/>
+
 scroll directive for [vuejs 2.0](https://vuejs.org/v2/guide/)
 
 For vue 1.x, please use vue-scroll@1.0.4. Currently its code is in master branch.
