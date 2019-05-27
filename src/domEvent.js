@@ -18,7 +18,6 @@ export default (function () {
       let data;
       let target = e.target || e.srcElement;
       e = e || window.e;
-      e.target = target
 
       if (e.type === SCROLL) {
         if (target === document) {
