@@ -1,5 +1,5 @@
 /**
-  * vue-scroll v2.1.10
+  * vue-scroll v2.1.12
   * (c) 2019 Wang Pin
   * @license MIT
   */
@@ -1706,7 +1706,6 @@ var dom = (function () {
       var data;
       var target = e.target || e.srcElement;
       e = e || window.e;
-      e.target = target;
 
       if (e.type === SCROLL) {
         if (target === document) {
