@@ -1,13 +1,13 @@
 {
   "name": "vue-scroll",
-  "version": "2.1.10",
+  "version": "2.1.11",
   "description": "scroll directive for vuejs 2.0",
   "main": "dist/vue-scroll.common.js",
   "module": "dist/vue-scroll.esm.js",
   "unpkg": "dist/vue-scroll.js",
   "scripts": {
     "dev:dist": "rollup -wm -c build/rollup.dev.config.js",
-    "build": "node build/build.js"
+    "prepublish": "node build/build.js"
   },
   "repository": {
     "type": "git",
