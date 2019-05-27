@@ -1,15 +1,5 @@
 # vue-scroll
 
-***Recommend to use the scroll implemenation of vuejs event handler***
-```
-<!-- the scroll event's default behavior (scrolling) will happen -->
-<!-- immediately, instead of waiting for `onScroll` to complete  -->
-<!-- in case it contains `event.preventDefault()`                -->
-<div v-on:scroll.passive="onScroll">...</div>
-```
-
-<hr/>
-
 scroll directive for [vuejs 2.0](https://vuejs.org/v2/guide/)
 
 For vue 1.x, please use vue-scroll@1.0.4. Currently its code is in master branch.
@@ -79,13 +69,8 @@ Override global configurations like
 <ul v-scroll:debounce="{fn: onScroll, debounce: 500 }">
 ```
 
-
 ## Demo
-* [Component Demo](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/vue-cli-webpack)
-
-Below two demos are uncommonly used and outdated. 
-* Sample - commonjs [Introduction](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/commonjs)
-* [Sample - standlone](https://github.com/wangpin34/vue-scroll/tree/2.0-compatible/samples/standlone) *** [Try it now](http://rawgit.com/wangpin34/vue-scroll/2.0-compatible/samples/standlone/index.html)
+You please try the demo hosted on codesandbox: https://codesandbox.io/s/vuescroll-demo-orders-view-f4d3d?fontsize=14
 
 
 ## LICENSE
