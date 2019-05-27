@@ -4,10 +4,10 @@ import _isFunction from 'lodash/isFunction'
 import _isFinite from 'lodash/isFinite'
 import _debounce from 'lodash/debounce'
 import _throttle from 'lodash/throttle'
+import _get from 'lodash/get'
 
 
 export default (function () {
-  const elements = [];
   const listeners = new Map();
 
   const SCROLL = 'scroll';
@@ -18,12 +18,13 @@ export default (function () {
       let data;
       let target = e.target || e.srcElement;
       e = e || window.e;
+      e.target = target
 
       if (e.type === SCROLL) {
         if (target === document) {
-          data = { scrollTop: document.body.scrollTop, scrollLeft: document.body.scrollLeft }
+          data = { scrollTop: _get(document, 'body.scrollTop', 0), scrollLeft: _get(document, 'body.scrollLeft', 0) }
         } else {
-          data = { scrollTop: target.scrollTop, scrollLeft: target.scrollLeft }
+          data = { scrollTop: _get(target, 'scrollTop', 0), scrollLeft: _get(target, 'scrollLeft', 0) }
         }
       }
 
