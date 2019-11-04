@@ -1,11 +1,19 @@
-const path = require('path')
-const buble = require('rollup-plugin-buble')
-const flow = require('rollup-plugin-flow-no-whitespace')
-const cjs = require('rollup-plugin-commonjs')
-const node = require('rollup-plugin-node-resolve')
-const replace = require('rollup-plugin-replace')
-const strip = require('rollup-plugin-strip')
-const version = process.env.VERSION || require('../package.json').version
+import fs from 'fs'
+import path from 'path'
+import buble from 'rollup-plugin-buble'
+import sizes from 'rollup-plugin-sizes'
+import flow from 'rollup-plugin-flow-no-whitespace'
+import cjs from 'rollup-plugin-commonjs'
+import node from 'rollup-plugin-node-resolve'
+import replace from 'rollup-plugin-replace'
+import cleanup from 'rollup-plugin-cleanup'
+import strip from 'rollup-plugin-strip'
+
+const resolve = _path => path.resolve(__dirname, '../', _path)
+
+const pkg = fs.readFileSync(resolve('package.json'))
+
+const version = process.env.VERSION || pkg.version
 const banner =
 `/**
   * vue-scroll v${version}
@@ -13,7 +21,7 @@ const banner =
   * @license MIT
   */`
 
-const resolve = _path => path.resolve(__dirname, '../', _path)
+
 
 module.exports = [
   // browser dev
@@ -42,13 +50,15 @@ function genConfig (opts) {
     input: {
       input: resolve('src/index.js'),
       plugins: [
-        flow(),
+        flow(), // Remove flow type
         node(),
         cjs(),
         replace({
           __VERSION__: version
         }),
         buble(),
+        sizes(),
+        cleanup(),
         strip({
           // set this to `false` if you don't want to
           // remove debugger statements
@@ -75,16 +85,6 @@ function genConfig (opts) {
     config.input.plugins.unshift(replace({
       'process.env.NODE_ENV': JSON.stringify(opts.env)
     }))
-  } else {
-    config.input.external = [
-      'lodash/isObject',
-      'lodash/isFunction',
-      'lodash/isInteger',
-      'lodash/isFinite',
-      'lodash/debounce',
-      'lodash/throttle',
-      'es6-map/implement'
-    ]
   }
 
   return config

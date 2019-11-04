@@ -1,7 +1,5 @@
-import _isObject from 'lodash/isObject'
-import _isFunction from 'lodash/isFunction'
+import { isObject, isFunction } from './lodash'
 import dom from './domEvent'
-import * as _ from 'es6-map/implement'
 
 
 const vuescroll = new Object;
@@ -16,7 +14,7 @@ vuescroll.install = function (Vue, options) {
 
   function bindValue (el, value, arg) {
     let fn, opt = Object.assign({}, options);
-    if (_isObject(value) || _isFunction(value)) {
+    if (isObject(value) || isFunction(value)) {
       fn = value;
 
       if (VALID_ARGS.indexOf(arg) > -1) {
@@ -41,7 +39,7 @@ vuescroll.install = function (Vue, options) {
 
   function unbindValue (el, value, arg) {
     let fn;
-    if (_isObject(value) || _isFunction(value)) {
+    if (isObject(value) || isFunction(value)) {
       fn = value;
       if (VALID_ARGS.indexOf(arg) > -1)  {
         fn = value.fn;

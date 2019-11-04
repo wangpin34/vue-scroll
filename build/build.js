@@ -1,50 +1,46 @@
-const fs = require('fs')
-const path = require('path')
-const zlib = require('zlib')
-const uglify = require('uglify-js')
-const rollup = require('rollup')
-const configs = require('./configs')
+import fs from 'fs'
+import path from 'path'
+import zlib from 'zlib'
+import uglify from 'uglify-js'
+import * as rollup from 'rollup'
+import configs from './configs'
 
-if (!fs.existsSync('dist')) {
-  fs.mkdirSync('dist')
-}
-
-build(Object.keys(configs).map(key => configs[key]))
-
-function build (builds) {
-  let built = 0
-  const total = builds.length
-  const next = () => {
-    buildEntry(builds[built]).then(() => {
-      built++
-      if (built < total) {
-        next()
-      }
-    }).catch(logError)
+async function build (builds) {
+  try {
+    for (let i = 0; i < builds.length; i ++) {
+      await buildEntry(builds[i])
+    }
+  } catch (err) {
+    console.error(`err occurs: ${err}`)
   }
-
-  next()
 }
 
-function buildEntry ({ input, output }) {
-  const isProd = /min\.js$/.test(output.file)
-  return rollup.rollup(input)
-    .then(bundle => bundle.generate(output))
-    .then(({ code }) => {
-      if (isProd) {
-        var minified = uglify.minify(code, {
-          output: {
-            preamble: output.banner,
-            /* eslint-disable camelcase */
-            ascii_only: true
-            /* eslint-enable camelcase */
-          }
-        }).code
-        return write(output.file, minified, true)
-      } else {
-        return write(output.file, code)
+async function buildEntry ({ input: inputOptions, output: outputOptions }) {
+  try {
+    const isProd = /min\.js$/.test(outputOptions.file)
+    const bundle = await rollup.rollup(inputOptions)
+    const { output } = await bundle.generate(outputOptions)
+    for (const chunkOrAsset of output) {
+      if (chunkOrAsset.type === 'chunk') {
+        const code = chunkOrAsset.code
+        if (isProd) {
+          var minified = uglify.minify(code, {
+            output: {
+              preamble: outputOptions.banner,
+              /* eslint-disable camelcase */
+              ascii_only: true
+              /* eslint-enable camelcase */
+            }
+          }).code
+          return write(outputOptions.file, minified, true)
+        } else {
+          return write(outputOptions.file, code)
+        }
       }
-    })
+    }
+  } catch (err) {
+    throw err
+  }
 }
 
 function write (dest, code, zip) {
@@ -80,4 +76,15 @@ function blue (str) {
   return '\x1b[1m\x1b[34m' + str + '\x1b[39m\x1b[22m'
 }
 
+if (!fs.existsSync('dist')) {
+  fs.mkdirSync('dist')
+}
+
+(async () => {
+  try {
+    await build(Object.keys(configs).map(key => configs[key]))
+  } catch (err) {
+    console.error(err)
+  }
+})()
 

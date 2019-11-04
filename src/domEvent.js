@@ -1,11 +1,4 @@
-import _isObject from 'lodash/isObject'
-import _isInteger from 'lodash/isInteger'
-import _isFunction from 'lodash/isFunction'
-import _isFinite from 'lodash/isFinite'
-import _debounce from 'lodash/debounce'
-import _throttle from 'lodash/throttle'
-import _get from 'lodash/get'
-
+import { isObject, isFunction, isInteger, debounce, throttle, get } from './lodash'
 
 export default (function () {
   const listeners = new Map();
@@ -21,9 +14,9 @@ export default (function () {
 
       if (e.type === SCROLL) {
         if (target === document) {
-          data = { scrollTop: _get(document, 'body.scrollTop', 0), scrollLeft: _get(document, 'body.scrollLeft', 0) }
+          data = { scrollTop: get(document, 'body.scrollTop', 0), scrollLeft: get(document, 'body.scrollLeft', 0) }
         } else {
-          data = { scrollTop: _get(target, 'scrollTop', 0), scrollLeft: _get(target, 'scrollLeft', 0) }
+          data = { scrollTop: get(target, 'scrollTop', 0), scrollLeft: get(target, 'scrollLeft', 0) }
         }
       }
 
@@ -32,15 +25,15 @@ export default (function () {
       })
     }
 
-    if (_isObject(opt)) {
-      if (_isInteger(opt.throttle) && _isFinite(opt.throttle) && opt.throttle > -1) {
+    if (isObject(opt)) {
+      if (isInteger(opt.throttle) && isFinite(opt.throttle) && opt.throttle > -1) {
         console.log('Set throttle as ' + opt.throttle);
-        fn = _throttle(fn, opt.throttle);
+        fn = throttle(fn, opt.throttle);
       }
 
-      if (_isInteger(opt.debounce) && _isFinite(opt.debounce) && opt.debounce > -1) {
+      if (isInteger(opt.debounce) && isFinite(opt.debounce) && opt.debounce > -1) {
         console.log('Set debounce as ' + opt.debounce);
-        fn = _debounce(fn, opt.debounce);
+        fn = debounce(fn, opt.debounce);
       }
     }
 
@@ -64,7 +57,7 @@ export default (function () {
 
     let funcs, eventFuncs;
 
-    if (!_isFunction(fn)) {
+    if (!isFunction(fn)) {
       throw new Error('Scroll handler is not a function');
     }
 
@@ -92,7 +85,7 @@ export default (function () {
 
     let funcs, eventFuncs;
 
-    if (!_isFunction(fn)) {
+    if (!isFunction(fn)) {
       return;
     }
 

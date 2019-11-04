@@ -6,14 +6,5 @@ export default {
   output: {
     file: 'dist/vue-scroll.dev.js',
     format: 'cjs'
-  },
-  external: [
-    'lodash/isObject',
-    'lodash/isFunction',
-    'lodash/isInteger',
-    'lodash/isFinite',
-    'lodash/debounce',
-    'lodash/throttle',
-    'es6-map/implement'
-  ]
+  }
 }
